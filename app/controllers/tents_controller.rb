@@ -16,4 +16,15 @@ class TentsController < ApplicationController
 
   def edit
   end
+  
+  
+  # /tents/:id/like
+  def like
+    
+    tent = Tent.find(params[:id])
+    tent.likes += 1
+    tent.save
+    
+  end
+  
 end

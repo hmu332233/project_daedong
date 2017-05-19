@@ -1,14 +1,12 @@
 Rails.application.routes.draw do
+  
+  get 'tents/:id/like' => 'tents#like'
+  
   get 'tents/index'
-
   get 'tents/create'
-
   get 'tents/update'
-
   get 'tents/delete'
-
   get 'tents/new'
-
   get 'tents/edit'
 
   # The priority is based upon order of creation: first created -> highest priority.

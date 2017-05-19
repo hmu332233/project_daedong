@@ -35,9 +35,9 @@ ActiveRecord::Schema.define(version: 20170519072523) do
     t.string   "name"
     t.string   "location"
     t.string   "content"
-    t.integer  "likes"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "likes",      default: 0
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
 end
