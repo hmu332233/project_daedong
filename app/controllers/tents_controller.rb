@@ -1,5 +1,8 @@
 class TentsController < ApplicationController
   def index
+    
+    @tents = Tent.all
+    
   end
 
   def create
@@ -25,6 +28,7 @@ class TentsController < ApplicationController
     tent.likes += 1
     tent.save
     
+    render json: {likes: tent.likes}
   end
   
 end

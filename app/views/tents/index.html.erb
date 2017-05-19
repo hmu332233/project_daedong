@@ -1,3 +1,14 @@
 <h1>Tents#index</h1>
 <p>Find me in app/views/tents/index.html.erb</p>
+
+
+<!--<div class="fb-like" data-href="https://project-daedong-likelion4mu.c9users.io/tents/2/like" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>-->
+
+<% @tents.each do |tent| %>
+    <button type="button" class="btn btn-primary" id="tent<%= tent.id %>" onclick="request_like(<%= tent.id%>)" ><%= tent.id %> 텐트 : <%= tent.likes %> </button><br/>
+    <!--<button type="button" class="btn btn-primary" onclick="location.href='/tents/<%= tent.id %>/like'" ><%= tent.id %> 텐트 : <%= tent.likes %> </button><br/>-->
+<% end %>
+
+
+멋사페이지 좋아요
 <div class="fb-like" data-href="https://www.facebook.com/likelioncbnu" data-layout="standard" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>

@@ -12,5 +12,27 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .
+
+
+
+function request_like(id)
+{
+    alert("running..");
+    $.ajax({
+    method: "GET",
+    url: "/tents/"+id+"/like",
+    success: function(data){
+        alert("success");
+        $("#tent"+id).html(id+" 텐트 : " + data.likes)
+    },
+    error: function(){
+        alert("fail");
+    }
+      
+    });
+}
+
+   
+  
+
