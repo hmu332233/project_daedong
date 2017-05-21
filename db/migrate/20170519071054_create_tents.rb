@@ -4,6 +4,7 @@ class CreateTents < ActiveRecord::Migration
       t.string :name
       t.string :location
       t.string :content
+      t.string :menu_content
       t.integer :likes ,:default => 0
 
       t.timestamps null: false
