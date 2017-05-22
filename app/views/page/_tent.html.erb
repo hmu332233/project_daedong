@@ -10,10 +10,11 @@
 		</div>
 		<div class="container mt-5 w-100">
 			<!--<div class="list-group">-->
-			<ul class="list-group">
+			<div class="d-flex justify-content-center">
+			<ul class="list-group col-lg-6">
 				<% tents.each do |tent| %>
-				 <li class="list-group-item justify-content-between" data-toggle="modal" data-target="#tent<%= tent.id %>">
-				    <div><%= tent.name %></div>
+				 <li class="list-group-item justify-content-between">
+				    <div class="col-9" data-toggle="modal" data-target="#tent<%= tent.id %>"><%= tent.location %> | <%= tent.name %></div>
 				    <div>
 				      <div class="row">
 					    <div class="col">
@@ -26,7 +27,9 @@
 				    </div>
 				  </li>
 				<% end %>
-			</ul>
+			</ul>	
+			</div>
+			
 		</div>
 	</div>
 </div>

@@ -163,9 +163,10 @@ a:not([href]):not([tabindex]):hover {
 }
 .navbar-light .navbar-toggler {
   float: right;
-  margin-top:15px;
-  margin-left:320px;
-  margin-right:5px;
+  margin: 14px;
+  /*margin-top:15px;*/
+  /*margin-left:320px;*/
+  /*margin-right:5px;*/
 }
 .navbar-light .navbar-toggler i {
   color: #666!important;
