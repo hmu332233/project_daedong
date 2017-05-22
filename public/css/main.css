@@ -172,7 +172,7 @@ a:not([href]):not([tabindex]):hover {
    Hero Area Style
    ========================================================================== */
 #hero-area {
-  background: url(../img/hero-area.jpg) no-repeat;
+  background: url(../img/milky.jpg) no-repeat;
   background-size: cover;
   color: #fff;
   overflow: hidden;
@@ -422,7 +422,7 @@ a:not([href]):not([tabindex]):hover {
   transform: translateY(0px);
 }
 .why {
-  background: url(../img/why-bg.jpg) fixed;
+  background: url(../img/milky.jpg) fixed;
   background-size: cover;
   padding-top: 80px;
 }
@@ -457,15 +457,16 @@ a:not([href]):not([tabindex]):hover {
    Testimonial Section Start
    ========================================================================== */
 #testimonial {
-  background: #3498db;
+  /*background: red;*/
 }
 #testimonial .img-member {
-  margin-top: 22px;
+  margin-top: auto;
+  margin-bottom: auto;
   overflow: hidden;
 }
 #testimonial .client-info {
   color: #fff;
-  margin: 20px auto;
+  margin: 200px auto;
 }
 #testimonial .client-info .client-name {
   font-size: 20px;
@@ -488,19 +489,19 @@ a:not([href]):not([tabindex]):hover {
 }
 .touch-slider .owl-controls .owl-buttons {
   position: relative;
-  top: -190px;
+  top: -600px;
   left: 0;
 }
 .touch-slider .owl-controls .owl-buttons div.owl-prev {
   float: left;
-  margin-left: -45px;
+  margin-left: -60px;
 }
 .touch-slider .owl-controls .owl-buttons div.owl-next {
   float: right !important;
   margin-right: -45px;
 }
 .owl-theme .owl-controls .owl-buttons div {
-  width: 40px;
+  width: -40px;
   height: 40px;
   line-height: 30px;
   display: block !important;
@@ -519,8 +520,8 @@ a:not([href]):not([tabindex]):hover {
 }
 .owl-theme .owl-controls .owl-buttons div i {
   color: #fff;
-  font-size: 20px;
-  line-height: 40px;
+  font-size: 80px;
+  line-height: 176px;
 }
 /* ==========================================================================
    Team Section Style
@@ -616,7 +617,7 @@ a:not([href]):not([tabindex]):hover {
    Great- Started Style
    ========================================================================== */
 .great-started {
-  background: url(../img/contact-bg.jpg) fixed;
+  background: url(../img/milky.jpg) fixed;
   background-position: 50% -210px;
   position: relative;
 }
