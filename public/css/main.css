@@ -164,6 +164,9 @@ a:not([href]):not([tabindex]):hover {
 .navbar-light .navbar-toggler {
   float: right;
   margin: 14px;
+  /*margin-top:15px;*/
+  /*margin-left:320px;*/
+  /*margin-right:5px;*/
 }
 .navbar-light .navbar-toggler i {
   color: #666!important;
@@ -172,7 +175,9 @@ a:not([href]):not([tabindex]):hover {
    Hero Area Style
    ========================================================================== */
 #hero-area {
+
   background: url(../img/milky.jpg) no-repeat;
+
   background-size: cover;
   color: #fff;
   overflow: hidden;
@@ -184,7 +189,7 @@ a:not([href]):not([tabindex]):hover {
   height: 100%;
   top: 0px;
   left: 0px;
-  background: #333;
+  /*background: #333;*/
   opacity: 0.9;
 }
 #hero-area .contents {
@@ -261,7 +266,7 @@ a:not([href]):not([tabindex]):hover {
    Services Section Start
    ========================================================================== */
 .services {
-  background: url(../img/servics-bg.jpg) fixed;
+  /*background: url(../img/servics-bg.jpg) fixed;*/
   background-size: cover;
   background-position: center bottom;
 }
@@ -422,7 +427,9 @@ a:not([href]):not([tabindex]):hover {
   transform: translateY(0px);
 }
 .why {
-  background: url(../img/milky.jpg) fixed;
+
+  /*background: url(../img/why-bg.jpg) fixed;*/
+
   background-size: cover;
   padding-top: 80px;
 }
@@ -457,7 +464,9 @@ a:not([href]):not([tabindex]):hover {
    Testimonial Section Start
    ========================================================================== */
 #testimonial {
-  /*background: red;*/
+
+  /*background: #3498db;*/
+
 }
 #testimonial .img-member {
   margin-top: auto;
@@ -617,7 +626,9 @@ a:not([href]):not([tabindex]):hover {
    Great- Started Style
    ========================================================================== */
 .great-started {
-  background: url(../img/milky.jpg) fixed;
+
+  /*background: url(../img/contact-bg.jpg) fixed;*/
+  
   background-position: 50% -210px;
   position: relative;
 }
@@ -781,7 +792,7 @@ a:not([href]):not([tabindex]):hover {
   margin-top: 30px;
 }
 .contact-icon {
-  background: url(../img/contact-bg.jpg) fixed;
+  /*background: url(../img/contact-bg.jpg) fixed;*/
   background-position: 50% -210px;
   position: relative;
 }

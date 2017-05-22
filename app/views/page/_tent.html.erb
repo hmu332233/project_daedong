@@ -1,19 +1,24 @@
 <section id="team" class="team-area section">
 <div class="container">
 	<div class="section-header text-center">
-		<h3 class="section-subtitle wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">Meet Our Team</h3>
 		<h2 class="section-title wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">주막</h2>
 	</div>
 	<div class="row">
 		<div class="container">
-			<img src="img/tent_map.jpg" class="img-fluid mx-auto d-block" alt="Responsive image">
+			<div class="d-flex justify-content-center">
+				<div class="col-lg-6">
+					<img src="img/tent_map.jpg" class="img-fluid mx-auto d-block" alt="Responsive image">
+				</div>
+				
+			</div>
 		</div>
 		<div class="container mt-5 w-100">
 			<!--<div class="list-group">-->
-			<ul class="list-group">
+			<div class="d-flex justify-content-center">
+			<ul class="list-group col-lg-6">
 				<% tents.each do |tent| %>
-				 <li class="list-group-item justify-content-between" data-toggle="modal" data-target="#tent<%= tent.id %>">
-				    <div><%= tent.name %></div>
+				 <li class="list-group-item justify-content-between">
+				    <div class="col-9" data-toggle="modal" data-target="#tent<%= tent.id %>"><%= tent.location %> | <%= tent.name %></div>
 				    <div>
 				      <div class="row">
 					    <div class="col">
@@ -26,7 +31,8 @@
 				    </div>
 				  </li>
 				<% end %>
-			</ul>
+			</ul>	
+			</div>
 		</div>
 	</div>
 </div>
