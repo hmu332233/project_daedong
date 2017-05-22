@@ -1,7 +1,34 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto:700,400);
+/*
+@import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+*/
+
+@font-face {
+  font-family: 'LotteMartDream';
+  font-style: normal;
+  font-weight: 400;
+  src: url('//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamMedium.woff2') format('woff2'), url('//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamMedium.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'LotteMartDream';
+  font-style: normal;
+  font-weight: 700;
+  src: url('//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamBold.woff2') format('woff2'), url('//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamBold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'LotteMartDream';
+  font-style: normal;
+  font-weight: 300;
+  src: url('//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamLight.woff2') format('woff2'), url('//cdn.jsdelivr.net/korean-webfonts/1/corps/lottemart/LotteMartDream/LotteMartDreamLight.woff') format('woff');
+}
+
+* {
+  font: 'LotteMartDream', sans-serif;
+}
 html,
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'LotteMartDream', sans-serif;
   color: #666;
   font-size: 14px;
   font-weight: 400;
@@ -9,8 +36,20 @@ body {
   overflow-x: hidden;
 }
 p {
+  font-family: 'LotteMartDream', sans-serif;
   font-size: 14px;
   line-height: 26px;
+}
+
+.modal {
+  font-family: 'LotteMartDream', sans-serif !important;
+}
+.form-control {
+ font-family: 'LotteMartDream', sans-serif !important;
+}
+
+#comment_btn {
+  font-family: 'LotteMartDream', sans-serif !important
 }
 a {
   -webkit-transition: all 0.2s linear;
