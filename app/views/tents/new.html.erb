@@ -1,2 +1,32 @@
-<h1>Tents#new</h1>
-<p>Find me in app/views/tents/new.html.erb</p>
+<div class="container">
+	<div class="row">
+		<form action="/tents" method="POST" enctype="multipart/form-data">
+			<div class="form-group">
+				<label for="exampleInputEmail1">이름</label>
+				<input type="text" class="form-control" id="exampleInputEmail1" name="name" aria-describedby="emailHelp" >
+			</div>
+			
+			<div class="form-group">
+				<label for="exampleInputEmail1">위치</label>
+				<input type="text" class="form-control" id="exampleInputEmail1" name="location" aria-describedby="emailHelp" >
+			</div>
+		
+			<div class="form-group">
+				<label for="exampleTextarea">소개</label>
+				<textarea class="form-control" id="exampleTextarea" rows="5" name="content"></textarea>
+			</div>
+			
+			<div class="form-group">
+				<label for="exampleTextarea">메뉴</label>
+				<textarea class="form-control" id="exampleTextarea" rows="5" name="menu_content"></textarea>
+			</div>
+			
+			<div class="form-group">
+				<label for="exampleInputFile">사진</label>
+				<input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp" name="image">
+				<small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
+			</div>
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+	</div>
+</div>

@@ -4,11 +4,43 @@
 
 <!--<div class="fb-like" data-href="https://project-daedong-likelion4mu.c9users.io/tents/2/like" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>-->
 
+<%= link_to "새글", "/tents/new",:method => "get" %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>주막 이름</th>
+      <th>좋아요수</th>
+      <th>버튼</th>
+      <th>댓글</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    
+    <% @tents.each do |tent| %>
+    <tr>
+        <th scope="row"><%= tent.id %></th>
+        <td><%= tent.name %></td>
+        <th><%= tent.likes %></th>
+        <td><%= link_to "수정", "/tents/#{tent.id}/edit",:method => "get" %> <%= link_to "삭제", "/tents/#{tent.id}",:method => "delete" %> <%= link_to "댓글", "/tents/#{tent.id}/reviews/new",:method => "get" %></td>
+        <td>
+          <% tent.reviews.each do |review| %>
+          <%= review.content%> : <%= review.created_at %>
+          <br/>
+          <% end %>
+        </td>
+    </tr>
+    <% end %>
+    
+  </tbody>
+</table>
+
 <% @tents.each do |tent| %>
     <button type="button" class="btn btn-primary" id="tent<%= tent.id %>" onclick="request_like(<%= tent.id%>)" ><%= tent.id %> 텐트 : <%= tent.likes %> </button><br/>
     <!--<button type="button" class="btn btn-primary" onclick="location.href='/tents/<%= tent.id %>/like'" ><%= tent.id %> 텐트 : <%= tent.likes %> </button><br/>-->
 <% end %>
-
 
 멋사페이지 좋아요
 <div class="fb-like" data-href="https://www.facebook.com/likelioncbnu" data-layout="standard" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>

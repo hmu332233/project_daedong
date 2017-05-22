@@ -1,0 +1,12 @@
+<div class="container">
+	<div class="row">
+		<form action="/tents/<%= @post_id %>/reviews" method="POST">
+			<div class="form-group">
+				<label for="exampleInputEmail1">내용</label>
+				<input type="text" class="form-control" id="exampleInputEmail1" name="content" aria-describedby="emailHelp" >
+			</div>
+			
+			<button type="submit" class="btn btn-primary">Submit</button>
+		</form>
+	</div>
+</div>

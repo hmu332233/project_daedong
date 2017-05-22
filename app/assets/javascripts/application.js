@@ -24,7 +24,7 @@ function request_like(id)
     url: "/tents/"+id+"/like",
     success: function(data){
         alert("success");
-        $("#tent"+id).html(id+" 텐트 : " + data.likes)
+        $("#tent_likes"+id).html(data.likes)
     },
     error: function(){
         alert("fail");
