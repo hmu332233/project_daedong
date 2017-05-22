@@ -1,5 +1,49 @@
+<section id="team" class="team-area section milky">
+<div class="container">
+	<div class="section-header text-center">
+		<h2 class="section-title wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">주막</h2>
+	</div>
+	<div class="row">
+		<div class="container">
+			<div class="d-flex justify-content-center">
+				<div class="col-lg-6">
+					<img src="img/tent_map.jpg" class="img-fluid mx-auto d-block" alt="Responsive image">
+				</div>
+			</div>
+		</div>
+		
+		
+		<div class="container mt-5 w-100">
+			<!--<div class="list-group">-->
+			<div class="d-flex justify-content-center">
+			<ul class="list-group col-lg-6">
+				<% @tents.each do |tent| %>
+				 <li class="list-group-item justify-content-between">
+				    <div class="col-9" data-toggle="modal" data-target="#tent<%= tent.id %>"><%= tent.location %> | <%= tent.name %></div>
+				    <div>
+				      <div class="row">
+					    <div class="col">
+					      <a onclick="request_like(<%= tent.id%>)"><img src="/img/icon_like.png" alt="like" width="25px;" height="24px;"></a>
+					    </div>
+					    <div class="col">
+					      <span class="like-count py-auto" id="tent_likes<%= tent.id %>"><%=tent.likes %></span>
+					    </div>
+				      </div>
+				    </div>
+				  </li>
+				<% end %>
+			</ul>	
+			</div>
+		</div>
+	</div>
+</div>
+</section>
+
 <!-- nav -->
 <%= render 'nav' %>
+
+<!--주막정보-->
+<%= render partial: 'tent', locals: {tents: @tents}%>
 
 <!--축제정보-->
 <%= render 'festival' %>
@@ -7,56 +51,8 @@
 <!--라인업-->
 <%= render 'line_up.html.erb' %>
 
-<!--주막정보-->
-<%= render partial: 'tent', locals: {tents: @tents}%>
-
-
-<!-- Contact Icon End -->
-<!-- Footer Section Start -->
-<footer>
-
-<!-- Footer area End -->
-<!-- Copyright Start  -->
-<div id="copyright">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<div class="site-info pull-left wow fadeInLeft" data-wow-duration="1000ms" data-wow-delay="300ms">
-					<p>
-						 Template by <a rel="nofollow" href="http://graygrids.com">GrayGrids</a>
-					</p>
-				</div>
-				<div class="bottom-social-icons social-icon pull-right wow fadeInRight" data-wow-duration="1000ms" data-wow-delay="300ms">
-					<a class="twitter" href="https://twitter.com/GrayGrids"><i class="fa fa-twitter"></i></a>
-					<a class="facebook" " href="https://web.facebook.com/GrayGrids"><i class="fa fa-facebook"></i></a>
-					<a class="google-plus" " href="https://plus.google.com/+GrayGrids"><i class="fa fa-google-plus"></i></a>
-					<a class="linkedin" href="https://www.linkedin.com/GrayGrids"><i class="fa fa-linkedin"></i></a>
-					<a class="dribble" href="https://dribbble.com/GrayGrids"><i class="fa fa-dribbble"></i></a>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<!-- Copyright End -->
-</footer>
-<!-- Footer Section End -->
-<!-- Go To Top Link -->
-<a href="#" class="back-to-top">
-<i class="fa fa-arrow-up"></i>
-</a>
-<div id="loader">
-	<div class="cssload-thecube">
-		<div class="cssload-cube cssload-c1">
-		</div>
-		<div class="cssload-cube cssload-c2">
-		</div>
-		<div class="cssload-cube cssload-c4">
-		</div>
-		<div class="cssload-cube cssload-c3">
-		</div>
-	</div>
-</div>
-
+<!-- footer -->
+<%= render 'footer' %>
 
 <script>
       function add_review(id) {
@@ -110,3 +106,5 @@ function request_like(id)
 }
 
 </script>
+
+
