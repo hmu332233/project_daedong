@@ -467,7 +467,7 @@ a:not([href]):not([tabindex]):hover {
 }
 .why {
 
-  /*background: url(../img/milky.jpg) fixed;*/
+  background: url(../img/milky.jpg) fixed;
   
 
   background-size: cover;
