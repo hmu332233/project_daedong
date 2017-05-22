@@ -1,4 +1,4 @@
-<section id="team" class="team-area section">
+<section id="team" class="team-area section milky">
 <div class="container">
 	<div class="section-header text-center">
 		<h2 class="section-title wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">주막</h2>
@@ -9,9 +9,10 @@
 				<div class="col-lg-6">
 					<img src="img/tent_map.jpg" class="img-fluid mx-auto d-block" alt="Responsive image">
 				</div>
-				
 			</div>
 		</div>
+		
+		
 		<div class="container mt-5 w-100">
 			<!--<div class="list-group">-->
 			<div class="d-flex justify-content-center">
@@ -45,7 +46,7 @@
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 style="text-align:center; font-family: 'Damion';" class="modal-title"><%= tent.name %></h5>
+				<h5 style="text-align:center;" class="modal-title"><%= tent.name %></h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 				<span aria-hidden="true">×</span>
 				</button>
@@ -75,10 +76,10 @@
 					<form class="form-inline w-100">
 						<div class="row w-100">
 							<div class="col-8">
-								<input type="text" name="txtSend" class="form-control w-100" id="inlineFormInput<%= tent.id %>" placeholder="평가해줘여" style="color:black;">
+								<input type="text" name="txtSend" class="form-control w300" id="inlineFormInput<%= tent.id %>" placeholder="평가해줘여" style="color:black;">
 							</div>
 							<div class="col-3">
-								<button type="submit" onclick="add_review(<%= tent.id %>);" class="btn mt-2">댓글달기</button>
+								<button type="submit" onclick="add_review(<%= tent.id %>);" class="btn mt-2" id="comment_btn">댓글달기</button>
 							</div>
 						</div>
 					</form>
@@ -95,3 +96,4 @@
 	</div>
 </div>
 <% end %>
+
