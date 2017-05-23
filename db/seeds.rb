@@ -25,7 +25,10 @@ Tent.create(name: "Noncolor",location: "14", content: "",menu_content: "")
 Tent.create(name: "엔터테이먼트",location: "15", content: "",menu_content: "")
 Tent.create(name: "쌈사라(식품유통학과)",location: "16", content: "",menu_content: "")
 Tent.create(name: "체육교육과",location: "17", content: "",menu_content: "")
-Tent.create(name: "식품공학과",location: "18", content: "",menu_content: "")
+Tent.create(name: "식품공학과",location: "18", content: "안녕하세요 전북대학교 학우 여러분~☺
+D-2! 대동제가 이틀밖에 남지 않았습니다! 5월 24일부터 26일까지 삼일동안 식품공학과 주막이 운영됩니다👏👏
+여러가지 다양한 안주부터 한 번 먹으면 또 먹고 싶은 홍초소주까지!
+🐰酒토피아🐰 에서 보내는 신나는 축제에 여러분들의 많은 참여부탁드려요~❤❤❤",menu_content: "")
 Tent.create(name: "동물자원과학과",location: "19", content: "",menu_content: "")
 Tent.create(name: "조경학과",location: "20", content: "",menu_content: "")
 Tent.create(name: "통계학과",location: "21", content: "",menu_content: "")
@@ -33,7 +36,7 @@ Tent.create(name: "행쇼 총학생회",location: "22", content: "",menu_content
 Tent.create(name: "예술대 학생회",location: "23", content: "",menu_content: "")
 Tent.create(name: "과학학과",location: "24", content: "",menu_content: "")
 Tent.create(name: "물리학과",location: "25", content: "",menu_content: "")
-Tent.create(name: "날도 좋구 술주면 마시리(IT정보공학과)",location: "26", content: "",menu_content: "")
+Tent.create(name: "IT정보공학과",location: "26", content: "",menu_content: "")
 Tent.create(name: "대IT응용노빠꾸포차",location: "27", content: "",menu_content: "")
 Tent.create(name: "샤크",location: "28", content: "",menu_content: "")
 Tent.create(name: "공식당",location: "29", content: "",menu_content: "")
@@ -41,7 +44,7 @@ Tent.create(name: "토목공학과",location: "30", content: "",menu_content: ""
 Tent.create(name: "지역건설공학과 학생회",location: "31", content: "",menu_content: "")
 Tent.create(name: "너나울",location: "32", content: "",menu_content: "")
 Tent.create(name: "돈모아나(화학과)",location: "33", content: "",menu_content: "")
-Tent.create(name: "취하고시펑??더먹고시펑?",location: "34", content: "",menu_content: "")
+Tent.create(name: "취하고시펑??더먹고시펑?(생명과학과)",location: "34", content: "",menu_content: "")
 
 Tent.all.each do |tent|
 

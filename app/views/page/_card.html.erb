@@ -213,14 +213,14 @@ h5 {
 						</div>
 					</div>
 			
-					<div class="row pt-2">
-						<div style="border: 0px; float: left; width: 33%;">
+					<div class="row w-100 pt-2">
+						<div style="border: 0px; float: left;">
 						</div>
-						<div style="border: 0px; float: left; width: 33%; text-align:center;">
+						<div style="border: 0px; float: left; text-align:center;">
 							<strong>* 소개 *</strong>
-							<p><%= simple_format(tent.content) %></p>
+							<%= simple_format(tent.content) %>
 							<strong>* 메뉴 *</strong>
-							<p><%= simple_format(tent.menu_content) %></p>
+							<%= simple_format(tent.menu_content) %>
 						</div>
 					</div>
 				</div>
