@@ -1,0 +1,224 @@
+<style>
+    html {
+    font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+h5 {
+    font-size: 1.28571429em;
+    font-weight: 700;
+    line-height: 1.2857em;
+    margin: 0;
+}
+
+.card {
+    font-size: 1em;
+    overflow: hidden;
+    padding: 0;
+    border: none;
+    border-radius: .28571429rem;
+    box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
+}
+
+.card-block {
+    font-size: 1em;
+    position: relative;
+    margin: 0;
+    padding: 1em;
+    border: none;
+    border-top: 1px solid rgba(34, 36, 38, .1);
+    box-shadow: none;
+}
+
+.card-img-top {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.card-title {
+    font-size: 1.28571429em;
+    font-weight: 700;
+    line-height: 1.2857em;
+}
+
+.card-text {
+    clear: both;
+    margin-top: .5em;
+    color: rgba(0, 0, 0, .68);
+}
+
+.card-footer {
+    font-size: 1em;
+    position: static;
+    top: 0;
+    left: 0;
+    max-width: 100%;
+    padding: .75em 1em;
+    color: rgba(0, 0, 0, .4);
+    border-top: 1px solid rgba(0, 0, 0, .05) !important;
+    background: #fff;
+}
+
+.card-inverse .btn {
+    border: 1px solid rgba(0, 0, 0, .05);
+}
+
+.profile {
+    position: absolute;
+    top: -12px;
+    display: inline-block;
+    overflow: hidden;
+    box-sizing: border-box;
+    width: 25px;
+    height: 25px;
+    margin: 0;
+    border: 1px solid #fff;
+    border-radius: 50%;
+}
+
+.profile-avatar {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+.profile-inline {
+    position: relative;
+    top: 0;
+    display: inline-block;
+}
+
+.profile-inline ~ .card-title {
+    display: inline-block;
+    margin-left: 4px;
+    vertical-align: top;
+}
+
+.text-bold {
+    font-weight: 700;
+}
+
+.meta {
+    font-size: 1em;
+    color: rgba(0, 0, 0, .4);
+}
+
+.meta a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, .4);
+}
+
+.meta a:hover {
+    color: rgba(0, 0, 0, .87);
+}
+</style>
+
+<section id="team" class="team-area section milky">
+<div class="container">
+	<div class="section-header text-center">
+		<h2 class="section-title wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">주막</h2>
+	</div>
+	<div class="row">
+		<div class="container">
+			<div class="d-flex justify-content-center">
+				<div class="col-lg-6">
+					<img src="img/tent_map.jpg" class="img-fluid mx-auto d-block" alt="Responsive image">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+    <div class="row">
+        <% tents.each do |tent| %>
+        <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
+            <div class="card"  data-toggle="modal" data-target="#tent<%= tent.id %>">
+                <img class="card-img-top" src="<%= tent.pic_url %>">
+                <div class="card-block">
+                    <h4 class="card-title"><%= tent.name %></h4>
+                    
+                    <div class="card-text">
+                        <%= tent.content%>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <span class="float-right">댓글 : <%= tent.reviews.size %>개</span>
+                    <span><a onclick="request_like(<%= tent.id%>)"><img src="/img/icon_like.png" alt="like" width="25px;" height="24px;"></a></i> <%= tent.likes %> likes</span>
+                </div>
+                 <div class="card-footer">
+                    <% if tent.reviews.size > 0 %>
+                    <span>최신 댓글 : <%= tent.reviews.last.content %></span>
+                    <span class="float-right"><%= tent.reviews.last.created_at.strftime("%d일 %T") %></span>
+                    <% else %>
+                    <span>최신 댓글 : 댓글이 없습니다..ㅠ </span>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+        <% end %>
+    </div>
+</div>
+</section>
+
+
+<% tents.each do |tent| %>
+<div class="modal fade" id="tent<%= tent.id %>" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true" style="display: none; z-index:10000;">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 style="text-align:center;" class="modal-title"><%= tent.name %></h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">×</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="">
+							<img src="<%= tent.pic_url %>" class="img-fluid">
+						</div>
+					</div>
+			
+					<div class="row pt-2">
+						<div style="border: 0px; float: left; width: 33%;">
+						</div>
+						<div style="border: 0px; float: left; width: 33%; text-align:center;">
+							<strong>* 소개 *</strong>
+							<p><%= simple_format(tent.content) %></p>
+							<strong>* 메뉴 *</strong>
+							<p><%= simple_format(tent.menu_content) %></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<div class="container">
+					<form class="form-inline w-100">
+						<div class="row w-100">
+							<div class="col-8">
+								<input type="text" name="txtSend" class="form-control w300" id="inlineFormInput<%= tent.id %>" placeholder="평가해줘여" style="color:black;">
+							</div>
+							<div class="col-3">
+								<button type="submit" onclick="add_review(<%= tent.id %>);" class="btn mt-2" id="comment_btn">댓글달기</button>
+							</div>
+						</div>
+					</form>
+					<div id="review<%= tent.id%>">
+						<% tent.reviews.reverse.each do |review| %>
+						<div class="row">
+							 <p class="pl-3"># <%= review.content %></p>
+						</div>
+						<% end %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<% end %>
+
