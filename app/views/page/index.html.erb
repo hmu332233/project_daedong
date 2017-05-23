@@ -19,30 +19,35 @@
         var val = $("#inlineFormInput"+id).val();
         // alert(val);
         
-      $.ajax({
-      method: "POST",
-      url: "/tents/"+id+"/reviews",
-      data: { content : val },
-      success: function(data){
-         
-        $("#review"+id).prepend(
-            "<div class='row'>"
-            + "<p class='pl-3'># "+val+"</p>"
-            + "<div class='ml-auto p-2'>"+data.time+"</div>"
-            + "</div>"
-         );
-      
-        //  alert("success");
-      },
-      error: function(){
-        // alert("fail");
-      }
-      
-    });
-   
-         $("#inlineFormInput"+id).val("");
+        if( val == "") alert("댓글을 입력해주세요.");
+        else{
+              $.ajax({
+              method: "POST",
+              url: "/tents/"+id+"/reviews",
+              data: { content : val },
+              success: function(data){
+                 
+                $("#review"+id).prepend(
+                    "<div class='row'>"
+                    + "<p class='pl-3'># "+val+"</p>"
+                    + "<div class='ml-auto p-2'>"+data.time+"</div>"
+                    + "</div>"
+                 );
+              
+                //  alert("success");
+              },
+              error: function(){
+                // alert("fail");
+              }
+              
+            });
+           
+            $("#inlineFormInput"+id).val("");
         
-        event.preventDefault(); // 새로고침 방지
+       
+        }
+        
+          event.preventDefault(); // 새로고침 방지
       }
 </script>
 
