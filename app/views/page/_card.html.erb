@@ -164,7 +164,7 @@ h5 {
             <div class="card" id="card<%= tent.id%>">
                 <div data-toggle="modal" data-target="#tent<%= tent.id %>">
                     <% unless tent.pic_url.nil? %>
-                    <img class="card-img-top" src="<%= tent.pic_url %>">
+                    <img class="card-img-top" src="<%= tent.pic_url %>" onerror="this.style.display='none'">
                     <% end %>
                     <div class="card-block">
                         <h4 class="card-title"><%= tent.location %> | <%= tent.name %></h4>
@@ -209,7 +209,7 @@ h5 {
 				<div class="container-fluid">
 					<div class="row">
 						<div class="">
-							<img src="<%= tent.pic_url %>" class="img-fluid">
+							<img src="<%= tent.pic_url %>" class="img-fluid" onerror="this.style.display='none'">
 						</div>
 					</div>
 			
@@ -218,6 +218,9 @@ h5 {
 							<strong>* 소개 *</strong>
 							<%= simple_format(tent.content) %>
 							<strong>* 메뉴 *</strong>
+							<div class="">
+							    <a href="<%= tent.menu_pic_url %>"><img src="<%= tent.menu_pic_url %>" class="img-fluid" onerror="this.style.display='none'"></a>
+						    </div>
 							<%= simple_format(tent.menu_content) %>
 						</div>
 					</div>

@@ -173,6 +173,7 @@ Tent.create(name: "취하고시펑??더먹고시펑?(생명과학과)",location:
 Tent.all.each do |tent|
 
 tent.pic_url = "/img/poster/#{tent.location}.jpg"
+tent.menu_pic_url = "/img/poster/#{tent.location}_menu.jpg"
 tent.save
 
 end
