@@ -19,7 +19,7 @@ Tent.create(name: "화학공학부",location: "08", content: "",menu_content: ""
 Tent.create(name: "자 원샷!",location: "09", content: "",menu_content: "")
 Tent.create(name: "다퍼주막(스포츠과학과)",location: "10", content: "",menu_content: "")
 Tent.create(name: "건축공학과",location: "11", content: "",menu_content: "")
-Tent.create(name: "청사초롱",location: "12", content: "",menu_content: "")
+Tent.create(name: "청사초롱(국어국문)",location: "12", content: "",menu_content: "")
 Tent.create(name: "보리",location: "13", content: "",menu_content: "")
 Tent.create(name: "Noncolor",location: "14", content: "",menu_content: "")
 Tent.create(name: "엔터테이먼트",location: "15", content: "",menu_content: "")
