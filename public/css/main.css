@@ -148,8 +148,17 @@ a:not([href]):not([tabindex]):focus,
 a:not([href]):not([tabindex]):hover {
   color: #3498db;
 }
+
+#line-up{
+  padding: 80px 0;
+  background: url(../img/milky.jpg) no-repeat;
+  background-size: cover;
+}
 .section {
   padding: 80px 0;
+ 
+  /*background-color: rgba(236, 238, 239, 0.08)
+  */
 }
 .section-header {
   color: #fff;
@@ -229,9 +238,7 @@ a:not([href]):not([tabindex]):hover {
    Hero Area Style
    ========================================================================== */
 #hero-area {
-
-  background: url(../img/milky.jpg) no-repeat;
-
+  background: url(../img/seung/milky2.jpg) no-repeat;
   background-size: cover;
   color: #fff;
   overflow: hidden;
