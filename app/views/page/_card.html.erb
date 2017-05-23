@@ -138,7 +138,9 @@ h5 {
         <% tents.each do |tent| %>
         <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
             <div class="card"  data-toggle="modal" data-target="#tent<%= tent.id %>">
+                <% unless tent.pic_url.nil? %>
                 <img class="card-img-top" src="<%= tent.pic_url %>">
+                <% end %>
                 <div class="card-block">
                     <h4 class="card-title"><%= tent.name %></h4>
                     
