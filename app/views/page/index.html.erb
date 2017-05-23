@@ -17,7 +17,7 @@
 <script>
       function add_review(id) {
         var val = $("#inlineFormInput"+id).val();
-        alert(val);
+        // alert(val);
         
       $.ajax({
       method: "POST",
@@ -32,10 +32,10 @@
             + "</div>"
          );
       
-         alert("success");
+        //  alert("success");
       },
       error: function(){
-        alert("fail");
+        // alert("fail");
       }
       
     });
@@ -50,17 +50,17 @@
 
 function request_like(id)
 {
-    alert("running..");
+    // alert("running..");
     $.ajax({
     method: "GET",
     url: "/tents/"+id+"/like",
     success: function(data){
-        alert(data.status);
+        // alert(data.status);
         if(data.status == "already") alert("이미 좋아요를 눌렀습니다.");
         $("#tent_likes"+id).html(" " + data.likes + " likes")
     },
     error: function(){
-        alert("fail");
+        // alert("fail");
     }
       
     });
