@@ -153,12 +153,13 @@ a:not([href]):not([tabindex]):hover {
   padding: 80px 0;
   background: url(../img/milky.jpg) no-repeat;
   background-size: cover;
+  position: relative;
+  
 }
 .section {
   padding: 80px 0;
- 
-  /*background-color: rgba(236, 238, 239, 0.08)
-  */
+  background-color: rgba(236, 238, 239, 0.08)
+  
 }
 .section-header {
   color: #fff;
@@ -176,11 +177,10 @@ a:not([href]):not([tabindex]):hover {
 .section-header .section-title:before {
   position: absolute;
   content: " ";
-  width: 50px;
+  width: 100px;
   top: 15px;
   margin-left: 0;
   margin-right: 0;
-  border-top: 2px solid #3498db;
 }
 .section-header .section-subtitle {
   font-size: 14px;
@@ -598,7 +598,7 @@ a:not([href]):not([tabindex]):hover {
    Team Section Style
    ========================================================================== */
 .team-area .section-header {
-  color: #666;
+  color: #a94442;
 }
 .single-team {
   background: #f6f6f6;
@@ -1048,7 +1048,7 @@ footer .menu li a:hover {
   font-size: 14px;
   text-align: center;
   border-radius: 50px;
-  background-color: #3498db;
+  background-color: #a94543;
   -webkit-transition: all 0.2s linear;
   -moz-transition: all 0.2s linear;
   -o-transition: all 0.2s linear;
