@@ -39,7 +39,19 @@ Tent.create(name: "물리학과",location: "25", content: "",menu_content: "")
 Tent.create(name: "IT정보공학과",location: "26", content: "",menu_content: "")
 Tent.create(name: "대IT응용노빠꾸포차",location: "27", content: "",menu_content: "")
 Tent.create(name: "샤크",location: "28", content: "",menu_content: "")
-Tent.create(name: "공식당",location: "29", content: "",menu_content: "")
+Tent.create(name: "공식당",location: "29", content: "🔥기대공대 주막 공식당🔥
+
+#기대공대 전회장님 마음대로
+#주막 #open
+
+🎈일시 : 5월 24-26일
+               오후 6시 ~
+🎈장소 : 테니스장 옆
+              가장 안쪽 자리
+
+양과 맛으로 승부하는 공대 주막!
+많이 놀러와주시길 바랍니다💙
+친구에게 메시지 공유하기",menu_content: "")
 Tent.create(name: "토목공학과",location: "30", content: "",menu_content: "")
 Tent.create(name: "지역건설공학과 학생회",location: "31", content: "",menu_content: "")
 Tent.create(name: "너나울",location: "32", content: "",menu_content: "")
