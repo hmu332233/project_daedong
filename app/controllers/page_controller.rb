@@ -5,7 +5,6 @@ class PageController < ApplicationController
     @lanks = Tent.order(likes: :desc).limit(5)
     
     @reviews = Review.order(id: :desc).limit(5)
-    
-    ap @reviews
+
   end
 end

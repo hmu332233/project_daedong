@@ -1,14 +1,14 @@
 <!-- nav -->
 <%= render 'nav' %>
 
+<!--라인업-->
+<%= render 'line_up.html.erb' %>
+
 <!--주막정보-->
 <%= render partial: 'card', locals: {tents: @tents} %>
 
 <!--축제정보-->
 <%= render 'festival' %>
-
-<!--라인업-->
-<%= render 'line_up.html.erb' %>
 
 <!-- footer -->
 <%= render 'footer' %>
@@ -22,13 +22,13 @@
       $.ajax({
       method: "POST",
       url: "/tents/"+id+"/reviews",
-      dataType: 'text',//데이타 타입
       data: { content : val },
       success: function(data){
          
         $("#review"+id).prepend(
             "<div class='row'>"
             + "<p class='pl-3'># "+val+"</p>"
+            + "<div class='ml-auto p-2'>"+data.time+"</div>"
             + "</div>"
          );
       
@@ -55,8 +55,9 @@ function request_like(id)
     method: "GET",
     url: "/tents/"+id+"/like",
     success: function(data){
-        alert("success");
-        $("#tent_likes"+id).html(data.likes)
+        alert(data.status);
+        if(data.status == "already") alert("이미 좋아요를 눌렀습니다.");
+        $("#tent_likes"+id).html(" " + data.likes + " likes")
     },
     error: function(){
         alert("fail");

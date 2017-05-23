@@ -77,11 +77,20 @@ class TentsController < ApplicationController
   # /tents/:id/like
   def like
     
-    tent = Tent.find(params[:id])
-    tent.likes += 1
-    tent.save
+    _id = params[:id]
     
-    render json: {likes: tent.likes}
+    tent = Tent.find(_id)
+    
+    if session["#{_id}"] === 1
+      _status = "already"
+    else
+      tent.likes += 1
+      tent.save
+      session["#{_id}"] = 1
+      _status = "success"
+    end
+
+    render json: {status: _status, likes: tent.likes}
   end
   
 end

@@ -14,9 +14,8 @@ class ReviewsController < ApplicationController
     _tent_id = params[:id]
     
     @tent = Review.create(content: _content,tent_id: _tent_id)
-  
-    redirect_to "/tents/index"
     
+    render json: {content: @tent.content, time: @tent.created_at.strftime("%d일 %T")}
   end
 
   def delete
@@ -24,6 +23,5 @@ class ReviewsController < ApplicationController
     review = Review.find(params[:id])
     review.delete
     
-    redirect_to "/tents/index"
   end
 end

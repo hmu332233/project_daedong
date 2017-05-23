@@ -129,6 +129,30 @@ h5 {
 			</div>
 		</div>
 	</div>
+	<div class="row d-flex justify-content-center">
+        <nav>
+          <ul class="pagination d-flex justify-content-center">
+            <% tents.limit(10).each_with_index do |tent,i| %>
+                <li class="page-item"><a class="page-link" href="#card<%= tent.id %>"><%=tent.location%></a></li>
+            <% end %>
+          </ul>
+          <ul class="pagination d-flex justify-content-center">
+            <% tents.limit(10).offset(10).each do |tent| %>
+            <li class="page-item"><a class="page-link" href="#card<%= tent.id %>"><%=tent.location%></a></li>
+            <% end %>
+          </ul>
+          <ul class="pagination d-flex justify-content-center">
+            <% tents.limit(10).offset(20).each do |tent| %>
+            <li class="page-item"><a class="page-link" href="#card<%= tent.id %>"><%=tent.location%></a></li>
+            <% end %>
+          </ul>
+          <ul class="pagination d-flex justify-content-center">
+            <% tents.offset(30).each do |tent| %>
+            <li class="page-item"><a class="page-link" href="#card<%= tent.id %>"><%=tent.location%></a></li>
+            <% end %>
+          </ul>
+        </nav>
+    </div>
 </div>
 </section>
 
@@ -136,28 +160,31 @@ h5 {
 <div class="container">
     <div class="row">
         <% tents.each do |tent| %>
-        <div class="col-sm-6 col-md-4 col-lg-3 mt-4">
-            <div class="card"  data-toggle="modal" data-target="#tent<%= tent.id %>">
-                <% unless tent.pic_url.nil? %>
-                <img class="card-img-top" src="<%= tent.pic_url %>">
-                <% end %>
-                <div class="card-block">
-                    <h4 class="card-title"><%= tent.name %></h4>
-                    
-                    <div class="card-text">
-                        <%= tent.content%>
+        <div class="col-sm-6 col-md-4 col-lg-4 mt-4">
+            <div class="card" id="card<%= tent.id%>">
+                <div data-toggle="modal" data-target="#tent<%= tent.id %>">
+                    <% unless tent.pic_url.nil? %>
+                    <img class="card-img-top" src="<%= tent.pic_url %>">
+                    <% end %>
+                    <div class="card-block">
+                        <h4 class="card-title"><%= tent.location %> | <%= tent.name %></h4>
+                        
                     </div>
                 </div>
                 <div class="card-footer">
                     <span class="float-right">댓글 : <%= tent.reviews.size %>개</span>
-                    <span><a onclick="request_like(<%= tent.id%>)"><img src="/img/icon_like.png" alt="like" width="25px;" height="24px;"></a></i> <%= tent.likes %> likes</span>
+                    <span><a onclick="request_like(<%= tent.id%>)"><img src="/img/icon_like.png" alt="like" width="25px;" height="24px;"></a><span id="tent_likes<%= tent.id %>"> <%= tent.likes %> likes</span></span>
                 </div>
-                 <div class="card-footer">
+                 <div class="card-footer" data-toggle="modal" data-target="#tent<%= tent.id %>">
                     <% if tent.reviews.size > 0 %>
-                    <span>최신 댓글 : <%= tent.reviews.last.content %></span>
-                    <span class="float-right"><%= tent.reviews.last.created_at.strftime("%d일 %T") %></span>
+                        <% if tent.reviews.last.content.size > 10 %>
+                        <span>최근 댓글 : <%= tent.reviews.last.content[0...8] %>...</span>
+                        <% else %>
+                        <span>최근 댓글 : <%= tent.reviews.last.content %></span>
+                        <% end %>
+                        <span class="float-right"><%= tent.reviews.last.created_at.strftime("%d일 %T") %></span>
                     <% else %>
-                    <span>최신 댓글 : 댓글이 없습니다..ㅠ </span>
+                    <span>최근 댓글 : 댓글이 없습니다..ㅠ </span>
                     <% end %>
                 </div>
             </div>
@@ -203,7 +230,7 @@ h5 {
 					<form class="form-inline w-100">
 						<div class="row w-100">
 							<div class="col-8">
-								<input type="text" name="txtSend" class="form-control w300" id="inlineFormInput<%= tent.id %>" placeholder="평가해줘여" style="color:black;">
+								<input type="text" name="txtSend" class="form-control w300" id="inlineFormInput<%= tent.id %>" placeholder="평가해줘여(최대 50글자)" style="color:black;">
 							</div>
 							<div class="col-3">
 								<button type="submit" onclick="add_review(<%= tent.id %>);" class="btn mt-2" id="comment_btn">댓글달기</button>
@@ -213,7 +240,13 @@ h5 {
 					<div id="review<%= tent.id%>">
 						<% tent.reviews.reverse.each do |review| %>
 						<div class="row">
-							 <p class="pl-3"># <%= review.content %></p>
+						     <% if tent.reviews.last.content.size > 50 %>
+						     <p class="pl-3"># <%= review.content[0...50] %>...</p>
+						     <% else %>
+						     <p class="pl-3"># <%= review.content %></p>
+						     <% end %>
+							 
+							 <div class="ml-auto p-2"><%= review.created_at.strftime("%d일 %T") %></div>
 						</div>
 						<% end %>
 					</div>

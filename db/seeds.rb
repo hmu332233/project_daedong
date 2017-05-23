@@ -8,23 +8,23 @@
 
 Tent.delete_all
 
-Tent.create(name: "주님곁으로(분자생물학과)",location: "1", content: "",menu_content: "")
-Tent.create(name: "유지소재파이버공학과",location: "2", content: "",menu_content: "")
-Tent.create(name: "독일학과",location: "3", content: "",menu_content: "")
-Tent.create(name: "생물환경화학과",location: "4", content: "",menu_content: "")
-Tent.create(name: "기계설계공학부",location: "5", content: "",menu_content: "")
-Tent.create(name: "구식당(지구환경과학과)",location: "6", content: "",menu_content: "")
-Tent.create(name: "BOP(전자공학부)",location: "7", content: "",menu_content: "")
-Tent.create(name: "화학공학부",location: "8", content: "",menu_content: "")
-Tent.create(name: "자 원샷!",location: "9", content: "",menu_content: "")
+Tent.create(name: "주님곁으로(분자생물학과)",location: "01", content: "",menu_content: "")
+Tent.create(name: "유기소재파이버공학과",location: "02", content: "",menu_content: "")
+Tent.create(name: "독일학과",location: "03", content: "",menu_content: "")
+Tent.create(name: "생물환경화학과",location: "04", content: "",menu_content: "")
+Tent.create(name: "기계설계공학부",location: "05", content: "",menu_content: "")
+Tent.create(name: "구식당(지구환경과학과)",location: "06", content: "",menu_content: "")
+Tent.create(name: "BOP(전자공학부)",location: "07", content: "",menu_content: "")
+Tent.create(name: "화학공학부",location: "08", content: "",menu_content: "")
+Tent.create(name: "자 원샷!",location: "09", content: "",menu_content: "")
 Tent.create(name: "다퍼주막(스포츠과학과)",location: "10", content: "",menu_content: "")
 Tent.create(name: "건축공학과",location: "11", content: "",menu_content: "")
 Tent.create(name: "청사초롱",location: "12", content: "",menu_content: "")
 Tent.create(name: "보리",location: "13", content: "",menu_content: "")
-Tent.create(name: "체육교육과",location: "14", content: "",menu_content: "")
+Tent.create(name: "Noncolor",location: "14", content: "",menu_content: "")
 Tent.create(name: "엔터테이먼트",location: "15", content: "",menu_content: "")
 Tent.create(name: "쌈사라(식품유통학과)",location: "16", content: "",menu_content: "")
-Tent.create(name: "Noncolor",location: "17", content: "",menu_content: "")
+Tent.create(name: "체육교육과",location: "17", content: "",menu_content: "")
 Tent.create(name: "식품공학과",location: "18", content: "",menu_content: "")
 Tent.create(name: "동물자원과학과",location: "19", content: "",menu_content: "")
 Tent.create(name: "조경학과",location: "20", content: "",menu_content: "")
@@ -42,3 +42,10 @@ Tent.create(name: "지역건설공학과 학생회",location: "31", content: "",
 Tent.create(name: "너나울",location: "32", content: "",menu_content: "")
 Tent.create(name: "돈모아나(화학과)",location: "33", content: "",menu_content: "")
 Tent.create(name: "취하고시펑??더먹고시펑?",location: "34", content: "",menu_content: "")
+
+Tent.all.each do |tent|
+
+tent.pic_url = "/img/poster/#{tent.location}.jpg"
+tent.save
+
+end
