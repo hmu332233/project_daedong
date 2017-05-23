@@ -54,3 +54,11 @@ a {
     padding: 20px 0 10px;
     color: #fff;
 }
+
+.line .section-header {
+    color: #fff;
+}
+
+.festi .section-header {
+    color: #a94442;
+}
