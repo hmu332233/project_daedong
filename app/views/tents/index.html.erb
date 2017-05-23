@@ -27,7 +27,8 @@
         <td><%= link_to "수정", "/tents/#{tent.id}/edit",:method => "get" %> <%= link_to "삭제", "/tents/#{tent.id}",:method => "delete" %> <%= link_to "댓글", "/tents/#{tent.id}/reviews/new",:method => "get" %></td>
         <td>
           <% tent.reviews.each do |review| %>
-          <%= review.content%> : <%= review.created_at %>
+          <%= review.content%> : <%= review.created_at %> : 
+          <%= link_to "삭제", "/reviews/#{review.id}",:method => "delete" %>
           <br/>
           <% end %>
         </td>
@@ -36,8 +37,4 @@
   </tbody>
 </table>
 
-<% @tents.each do |tent| %>
-    <button type="button" class="btn btn-primary" id="tent<%= tent.id %>" onclick="request_like(<%= tent.id%>)" ><%= tent.id %> 텐트 : <%= tent.likes %> </button><br/>
-    <!--<button type="button" class="btn btn-primary" onclick="location.href='/tents/<%= tent.id %>/like'" ><%= tent.id %> 텐트 : <%= tent.likes %> </button><br/>-->
-<% end %>
 

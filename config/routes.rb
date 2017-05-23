@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   
   root 'page#index'
   
-  get 'reviews/index'
+  get 'project/init' => 'reviews#index'
   get 'tents/:id/reviews/new' => 'reviews#new'
   post 'tents/:id/reviews' => 'reviews#create'
   delete 'reviews/:id' => 'reviews#delete'
