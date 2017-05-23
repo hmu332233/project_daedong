@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20170519072523) do
     t.string   "content"
     t.string   "menu_content"
     t.string   "pic_url"
+    t.string   "menu_pic_url"
     t.integer  "likes",        default: 0
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
