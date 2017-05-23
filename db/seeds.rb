@@ -59,7 +59,7 @@ Tent.create(name: "청사초롱(국어국문)",location: "12", content: "안녕�
 ",menu_content: "")
 Tent.create(name: "보리",location: "13", content: "",menu_content: "")
 Tent.create(name: "Noncolor",location: "14", content: "",menu_content: "")
-Tent.create(name: "엔터테이먼트",location: "15", content: "안녕하세요 엔터테인먼트입니다.
+Tent.create(name: "엔터테인먼트",location: "15", content: "안녕하세요 엔터테인먼트입니다.
 전북대에서 곧 대동제가 열리는데요
 축제에 빠질 수 없는 주막,
 저희 엔터도 합니다!
