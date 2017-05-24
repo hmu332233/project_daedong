@@ -15,6 +15,7 @@ class TentsController < ApplicationController
     @tent = Tent.create(name: _name,location: _location, content: _content,menu_content: _menu_content)
     
     image = params[:image]
+    image_menu = params[:image_menu]
     uploader = ImageUploader.new
     
     unless image.nil?
@@ -22,6 +23,15 @@ class TentsController < ApplicationController
       uploader.store!(image)
       
       @tent.pic_url = uploader.url
+      @tent.save
+    
+    end
+    
+    unless image_menu.nil?
+      
+      uploader.store!(image_menu)
+      
+      @tent.menu_pic_url = uploader.url
       @tent.save
     
     end
@@ -41,6 +51,7 @@ class TentsController < ApplicationController
     @tent.update(name: _name,location: _location, content: _content,menu_content: _menu_content)
     
     image = params[:image]
+    image_menu = params[:image_menu]
     uploader = ImageUploader.new
     
     unless image.nil?
@@ -48,6 +59,15 @@ class TentsController < ApplicationController
       uploader.store!(image)
       
       @tent.pic_url = uploader.url
+      @tent.save
+    
+    end
+    
+    unless image_menu.nil?
+      
+      uploader.store!(image_menu)
+      
+      @tent.menu_pic_url = uploader.url
       @tent.save
     
     end
