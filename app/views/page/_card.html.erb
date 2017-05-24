@@ -192,10 +192,13 @@ h5 {
 					<form class="form-inline w-100">
 						<div class="row w-100">
 							<div class="col-8">
-								<input type="text" name="txtSend" class="form-control w300" id="inlineFormInput<%= tent.id %>" placeholder="평가해줘여(최대 50글자)" style="color:black;">
+							    <div class="d-flex align-items-center mt-3">
+							     	<input type="text" name="txtSend" class="form-control w300" id="inlineFormInput<%= tent.id %>" placeholder="평가해줘여(최대 50글자)" style="color:black;">
+							    </div>
 							</div>
 							<div class="col-3">
-								<button type="submit" onclick="add_review(<%= tent.id %>);" class="btn mt-2" id="comment_btn">댓글달기</button>
+							    <div class="row"><button type="submit" onclick="add_review(<%= tent.id %>);" class="btn btn-secondary" style="color:black;">댓글달기</button></div>
+								<div class="row w-100"><button type="button" class="btn btn-secondary mt-1" data-dismiss="modal" aria-label="닫기" style="color:black;">닫기</button></div>
 							</div>
 						</div>
 					</form>
