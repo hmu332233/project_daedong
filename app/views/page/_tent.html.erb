@@ -1,42 +1,41 @@
+
 <section id="team" class="team-area section milky">
 <div class="container">
 	<div class="section-header text-center">
-		<h2 class="section-title wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms" style="color:red">주막</h2>
+		<h2 class="section-title wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">주&nbsp;막</h2>
 	</div>
 	<div class="row">
-		<div class="container wow fadeInUp" data-wow-duration="1200ms" data-wow-delay="300ms">
+		<div class="container">
 			<div class="d-flex justify-content-center">
 				<div class="col-lg-6">
 					<img src="img/tent_map.jpg" class="img-fluid mx-auto d-block" alt="Responsive image">
 				</div>
 			</div>
 		</div>
-		
-		
-		<div class="container mt-5 w-100">
-			<!--<div class="list-group">-->
-			<div class="d-flex justify-content-center">
-			<ul class="list-group col-lg-6">
-				<% tents.each do |tent| %>
-				 <li class="list-group-item justify-content-between">
-				    <div class="col-9" data-toggle="modal" data-target="#tent<%= tent.id %>"><%= tent.location %> | <%= tent.name %></div>
-				    <div>
-				      <div class="row">
-					    <div class="col">
-					      <a onclick="request_like(<%= tent.id%>)"><img src="/img/icon_like.png" alt="like" width="25px;" height="24px;"></a>
-					    </div>
-					    <div class="col">
-					      <span class="like-count py-auto" id="tent_likes<%= tent.id %>"><%=tent.likes %></span>
-					    </div>
-				      </div>
-				    </div>
-				  </li>
-				<% end %>
-			</ul>	
-			</div>
-		</div>
 	</div>
+	<div class="row d-flex justify-content-center">
+        <nav>
+          <ul class="pagination d-flex justify-content-center">
+            <% tents.limit(10).each_with_index do |tent,i| %>
+                <li class="page-item"><a class="page-link" href="#card<%= tent.id %>"><%=tent.location%></a></li>
+            <% end %>
+          </ul>
+          <ul class="pagination d-flex justify-content-center">
+            <% tents.limit(10).offset(10).each do |tent| %>
+            <li class="page-item"><a class="page-link" href="#card<%= tent.id %>"><%=tent.location%></a></li>
+            <% end %>
+          </ul>
+          <ul class="pagination d-flex justify-content-center">
+            <% tents.limit(10).offset(20).each do |tent| %>
+            <li class="page-item"><a class="page-link" href="#card<%= tent.id %>"><%=tent.location%></a></li>
+            <% end %>
+          </ul>
+          <ul class="pagination d-flex justify-content-center">
+            <% tents.offset(30).each do |tent| %>
+            <li class="page-item"><a class="page-link" href="#card<%= tent.id %>"><%=tent.location%></a></li>
+            <% end %>
+          </ul>
+        </nav>
+    </div>
 </div>
 </section>
-
-

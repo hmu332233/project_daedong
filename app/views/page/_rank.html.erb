@@ -1,40 +1,25 @@
-<section id="team" class="team-area section milky">
-<div class="container">
+<div class="container pb-5">
 	<div class="section-header text-center">
-		<h2 class="section-title wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">주막</h2>
+		<h2 class="section-title wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">실시간 주막 랭킹</h2>
 	</div>
-	<div class="row w-100">
-	
-		<div class="col-sm-12 col-lg-6">
-		    <div class="container mt-5 w-100">
-    			<!--<div class="list-group">-->
-    			<div class="d-flex justify-content-center">
-    			<ul class="list-group col-lg-12">
-    				<% @reviews.reverse.each do |review| %>
-    				 <li class="list-group-item justify-content-between">
-    				    <div class="col-12"><%= review.content %> <br/> <%= review.tent.name %></div>
-    				  </li>
-    				<% end %>
-    			</ul>	
-    			</div>
+	<div class="d-flex justify-content-center">
+    	<div class="row w-100">
+    		<div class="col-sm-12 col-lg-6">
+    		    <div class="w-100">
+        			<ul class="list-group">
+        			    <li class="list-group-item justify-content-between">
+        				    <div class="c">no | 이름</div>
+        				    <div class="c" >좋아요</div>
+        				 </li>
+        				<% lanks.each do |lank| %>
+        				 <li class="list-group-item justify-content-between" data-toggle="modal" data-target="#tent<%= lank.id %>">
+        				    <div class="c" ><%= lank.location %> | <%= lank.name %></div>
+        				    <div class="c" ><%= lank.likes %></div>
+        				  </li>
+        				<% end %>
+        			</ul>	
+        		</div>
     		</div>
-		</div>
-		<div class="col-sm-12 col-lg-6">
-		    <div class="container mt-5 w-100">
-    			<!--<div class="list-group">-->
-    			<div class="d-flex justify-content-center">
-    			<ul class="list-group col-lg-12">
-    				<% @lanks.each do |lank| %>
-    				 <li class="list-group-item justify-content-between">
-    				    <div class="c" data-toggle="modal" data-target="#tent<%= lank.id %>"><%= lank.location %> | <%= lank.name %></div>
-    				    <div class="c" ><%= lank.likes %></div>
-    				  </li>
-    				<% end %>
-    			</ul>	
-    			</div>
-    		</div>
-		</div>
-		
+    	</div>
 	</div>
 </div>
-</section>

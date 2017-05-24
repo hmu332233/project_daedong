@@ -116,49 +116,9 @@ h5 {
 }
 </style>
 
-<section id="team" class="team-area section milky">
-<div class="container">
-	<div class="section-header text-center">
-		<h2 class="section-title wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="300ms">주&nbsp;막</h2>
-	</div>
-	<div class="row">
-		<div class="container">
-			<div class="d-flex justify-content-center">
-				<div class="col-lg-6">
-					<img src="img/tent_map.png" class="img-fluid mx-auto d-block" alt="Responsive image">
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="row d-flex justify-content-center">
-        <nav>
-          <ul class="pagination d-flex justify-content-center">
-            <% tents.limit(10).each_with_index do |tent,i| %>
-                <li class="page-item"><a class="page-link" href="#card<%= tent.id %>"><%=tent.location%></a></li>
-            <% end %>
-          </ul>
-          <ul class="pagination d-flex justify-content-center">
-            <% tents.limit(10).offset(10).each do |tent| %>
-            <li class="page-item"><a class="page-link" href="#card<%= tent.id %>"><%=tent.location%></a></li>
-            <% end %>
-          </ul>
-          <ul class="pagination d-flex justify-content-center">
-            <% tents.limit(10).offset(20).each do |tent| %>
-            <li class="page-item"><a class="page-link" href="#card<%= tent.id %>"><%=tent.location%></a></li>
-            <% end %>
-          </ul>
-          <ul class="pagination d-flex justify-content-center">
-            <% tents.offset(30).each do |tent| %>
-            <li class="page-item"><a class="page-link" href="#card<%= tent.id %>"><%=tent.location%></a></li>
-            <% end %>
-          </ul>
-        </nav>
-    </div>
-</div>
-</section>
-
 <section>
 <div class="container">
+    
     <div class="row">
         <% tents.each do |tent| %>
         <div class="col-sm-6 col-md-4 col-lg-4 mt-4">
@@ -201,7 +161,7 @@ h5 {
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 style="text-align:center;" class="modal-title"><%= tent.name %></h5>
+				<h5 style="text-align:center;" class="modal-title"><%= tent.location %> | <%= tent.name %></h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 				<span aria-hidden="true">×</span>
 				</button>

@@ -4,6 +4,13 @@
 <!--라인업-->
 <%= render 'line_up.html.erb' %>
 
+<!--주막 랭킹-->
+<%= render partial: 'rank', locals: {lanks: @lanks,reviews: @reviews} %>
+
+
+<!--주막바로가기-->
+<%= render partial: 'tent', locals: {tents: @tents} %>
+
 <!--주막정보-->
 <%= render partial: 'card', locals: {tents: @tents} %>
 
