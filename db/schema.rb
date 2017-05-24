@@ -11,12 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170519071313) do
+ActiveRecord::Schema.define(version: 20170519072523) do
 
-  create_table "menus", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "price"
-    t.string   "pic_url"
+  create_table "reviews", force: :cascade do |t|
+    t.string   "content"
     t.integer  "tent_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -26,9 +24,12 @@ ActiveRecord::Schema.define(version: 20170519071313) do
     t.string   "name"
     t.string   "location"
     t.string   "content"
-    t.integer  "likes"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "menu_content"
+    t.string   "pic_url"
+    t.string   "menu_pic_url"
+    t.integer  "likes",        default: 0
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
 end
