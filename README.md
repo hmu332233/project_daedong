@@ -1,24 +1,15 @@
+## 전북대학교 대동제 페이지
+  - 전북대학교 최초의 대동제 소개 페이지
+  - 학교 축제에 대한 정보와 축제의 꽃 주막들의 정보를 한 눈에 모아서 볼 수 있는 곳이 없다는 불편함을 해소하기 위해 시작한 프로젝트
 
-     ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
-    '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
-    |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
-    '  '--'\|  |' '-' ''  ''  '\ `-' | .'  /   |  ||  '--'  /|  `---.
-     `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
-    ----------------------------------------------------------------- 
-
-
-Welcome to your Rails project on Cloud9 IDE!
-
-To get started, just do the following:
-
-1. Run the project with the "Run Project" button in the menu bar on top of the IDE.
-2. Preview your new app by clicking on the URL that appears in the Run panel below (https://project-daedong-likelion4mu.c9users.io/).
-
-Happy coding!
-The Cloud9 IDE team
-
-
-## Support & Documentation
-
-Visit http://docs.c9.io for support, or to learn more about using Cloud9 IDE. 
-To watch some training videos, visit http://www.youtube.com/user/c9ide
+ - #### 제공기능
+   - 축제 정보
+   - 주점 위치
+   - 주점 메뉴
+   - 주점 랭킹 및 댓글
+  
+ - #### 화면
+    ![1](doc/img/main.png)
+    ![1](doc/img/line.png)
+    ![1](doc/img/index.png)
+    ![1](doc/img/show.png)
